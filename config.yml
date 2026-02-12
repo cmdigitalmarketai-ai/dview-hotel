@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: cmdigitalmarketai-ai/dview-hotel
   branch: master
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -16,7 +19,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Title", name: "hero_title", widget: "string"}
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Hero Image URL", name: "hero_image", widget: "string"}
           
       - label: "Homepage English"
         name: "home-en"
@@ -25,7 +28,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Title", name: "hero_title", widget: "string"}
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Hero Image URL", name: "hero_image", widget: "string"}
 
   - name: "rooms"
     label: "Rooms"
@@ -38,7 +41,7 @@ collections:
       - {label: "Description (Thai)", name: "description_th", widget: "text"}
       - {label: "Description (English)", name: "description_en", widget: "text"}
       - {label: "Price per Night", name: "price", widget: "number", value_type: "int"}
-      - {label: "Room Image", name: "image", widget: "image"}
+      - {label: "Room Image URL", name: "image", widget: "string"}
       - {label: "Bed Type", name: "bed", widget: "select", options: ["1 King Bed", "2 King Beds", "1 Queen Bed"]}
       - {label: "Room Size (sqm)", name: "size", widget: "number", value_type: "int"}
       - {label: "Max Guests", name: "guests", widget: "number", value_type: "int"}
