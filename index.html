@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DView Golden Triangle Hotel | Luxury Resort Chiang Rai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>DView金三角酒店 | 清莱豪华度假村</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+SC:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -17,13 +17,12 @@
         }
         
         body {
-            font-family: 'Prompt', sans-serif;
+            font-family: 'Noto Sans SC', sans-serif;
             background: var(--cream);
             color: #333;
             line-height: 1.8;
         }
         
-        /* Language Switcher - Elegant */
         .lang-switcher {
             position: fixed;
             top: 30px;
@@ -40,23 +39,16 @@
         .lang-switcher a {
             text-decoration: none;
             color: var(--navy);
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin: 0 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 0 3px;
             font-weight: 500;
             transition: all 0.3s ease;
-            font-size: 14px;
-            letter-spacing: 1px;
+            font-size: 13px;
         }
         
-        .lang-switcher a.active,
-        .lang-switcher a:hover {
-            background: var(--gold);
-            color: white;
-            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
-        }
+        .lang-switcher a.active { background: var(--gold); color: white; }
         
-        /* Hero Section - Luxury */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, rgba(10,22,40,0.8) 0%, rgba(10,22,40,0.4) 100%),
@@ -97,7 +89,7 @@
         
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 700;
             margin-bottom: 20px;
             text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
@@ -133,11 +125,7 @@
             background: var(--gold-light);
         }
         
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-            width: 100%;
-        }
+        section { padding: 100px 0; width: 100%; }
         
         .container {
             max-width: 100%;
@@ -173,10 +161,7 @@
             margin: 30px auto;
         }
         
-        /* Rooms - Luxury Cards */
-        .rooms {
-            background: white;
-        }
+        .rooms { background: white; }
         
         .rooms-grid {
             display: grid;
@@ -234,13 +219,11 @@
             z-index: 1;
         }
         
-        .room-info {
-            padding: 40px;
-        }
+        .room-info { padding: 40px; }
         
         .room-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 15px;
             color: var(--navy);
         }
@@ -287,7 +270,6 @@
             color: #888;
         }
         
-        /* Facilities - Elegant */
         .facilities {
             background: linear-gradient(to bottom, var(--cream), white);
         }
@@ -337,20 +319,14 @@
             font-size: 15px;
         }
         
-        /* Contact Section */
         .contact {
             background: var(--navy);
             color: white;
             text-align: center;
         }
         
-        .contact .section-title {
-            color: white;
-        }
-        
-        .contact .section-label {
-            color: var(--gold);
-        }
+        .contact .section-title { color: white; }
+        .contact .section-label { color: var(--gold); }
         
         .contact-form {
             max-width: 900px;
@@ -386,7 +362,7 @@
             background: rgba(255,255,255,0.05);
             color: white;
             font-size: 16px;
-            font-family: 'Prompt', sans-serif;
+            font-family: 'Noto Sans SC', sans-serif;
             transition: all 0.3s ease;
         }
         
@@ -425,7 +401,6 @@
             box-shadow: 0 10px 30px rgba(212,175,55,0.3);
         }
         
-        /* Footer - Luxury */
         footer {
             background: var(--navy);
             color: white;
@@ -476,12 +451,12 @@
             letter-spacing: 1px;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 42px; }
             .section-title { font-size: 32px; }
             .rooms-grid { grid-template-columns: 1fr; }
-            .lang-switcher { top: 15px; right: 15px; padding: 8px 15px; }
+            .lang-switcher { top: 15px; right: 15px; padding: 8px 12px; }
+            .lang-switcher a { padding: 6px 10px; font-size: 12px; }
             .contact-form { padding: 40px 25px; }
         }
     </style>
@@ -489,17 +464,18 @@
 <body>
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <a href="/" class="active">ไทย</a>
+        <a href="/">ไทย</a>
         <a href="/en/">EN</a>
+        <a href="/zh/" class="active">中文</a>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Luxury Resort & Spa</p>
-            <h1>DView Golden<br>Triangle Hotel</h1>
-            <p class="hero-tagline">Experience Unparalleled Elegance in the Heart of Chiang Rai</p>
-            <a href="#contact" class="cta-button">Reserve Your Stay</a>
+            <p class="hero-subtitle">豪华度假村及水疗中心</p>
+            <h1>DView金三角酒店</h1>
+            <p class="hero-tagline">在清莱市中心体验无与伦比的优雅</p>
+            <a href="#contact" class="cta-button">立即预订</a>
         </div>
     </section>
 
@@ -507,71 +483,71 @@
     <section class="rooms" id="rooms">
         <div class="container">
         <div class="section-header">
-            <p class="section-label">Accommodations</p>
-            <h2 class="section-title">ห้องพักหรูหรา</h2>
+            <p class="section-label">客房</p>
+            <h2 class="section-title">豪华客房</h2>
             <div class="section-divider"></div>
         </div>
         
         <div class="rooms-grid">
             <div class="room-card">
                 <div class="room-image">
-                    <span class="room-badge">POPULAR</span>
+                    <span class="room-badge">热门</span>
                     🌊
                 </div>
                 <div class="room-info">
-                    <h3>Deluxe Mekong View</h3>
-                    <p>ห้องพักสุดหรูที่มองเห็นวิวแม่น้ำโขงอันงดงาม พร้อมระเบียงส่วนตัวและอ่างอาบน้ำแช่ตัว</p>
+                    <h3>湄公河豪华景观房</h3>
+                    <p>豪华客房可欣赏壮丽的湄公河美景，配有私人阳台和按摩浴缸</p>
                     <div class="room-features">
-                        <span>🛏️ 1 King Bed</span>
-                        <span>📐 45 m²</span>
-                        <span>👥 2 Guests</span>
+                        <span>🛏️ 1张特大床</span>
+                        <span>📐 45 平方米</span>
+                        <span>👥 2人</span>
                     </div>
                     <div class="room-price">
-                        <span class="price-label">START FROM</span>
+                        <span class="price-label">起价</span>
                         <span class="price-value">฿2,500</span>
-                        <span class="price-unit">/ night</span>
+                        <span class="price-unit">/ 晚</span>
                     </div>
                 </div>
             </div>
             
             <div class="room-card">
                 <div class="room-image">
-                    <span class="room-badge">BEST VIEW</span>
+                    <span class="room-badge">最佳景观</span>
                     🌅
                 </div>
                 <div class="room-info">
-                    <h3>Premium Sunset Suite</h3>
-                    <p>ชมพระอาทิตย์ตกดินอันตระการตาจากระเบียงส่วนตัว ห้องกว้างขวางเหมาะสำหรับคู่รัก</p>
+                    <h3>高级日落套房</h3>
+                    <p>从私人阳台欣赏壮观的日落美景，宽敞的房间非常适合情侣入住</p>
                     <div class="room-features">
-                        <span>🛏️ 1 King Bed</span>
-                        <span>📐 60 m²</span>
-                        <span>👥 2 Guests</span>
+                        <span>🛏️ 1张特大床</span>
+                        <span>📐 60 平方米</span>
+                        <span>👥 2人</span>
                     </div>
                     <div class="room-price">
-                        <span class="price-label">START FROM</span>
+                        <span class="price-label">起价</span>
                         <span class="price-value">฿3,200</span>
-                        <span class="price-unit">/ night</span>
+                        <span class="price-unit">/ 晚</span>
                     </div>
                 </div>
             </div>
             
             <div class="room-card">
                 <div class="room-image">
-                    <span class="room-badge">LUXURY</span>
+                    <span class="room-badge">奢华</span>
                     👑
                 </div>
                 <div class="room-info">
-                    <h3>Grand Presidential Suite</h3>
-                    <p>ห้องพักระดับพรีเมียมสุดหรู พร้อมห้องนั่งเล่นส่วนตัว บริการรูมเซอร์วิส 24 ชั่วโมง</p>
+                    <h3>总统大套房</h3>
+                    <p>超豪华高级套房，配有私人客厅，24小时客房服务</p>
                     <div class="room-features">
-                        <span>🛏️ 2 King Beds</span>
-                        <span>📐 120 m²</span>
-                        <span>👥 4 Guests</span>
+                        <span>🛏️ 2张特大床</span>
+                        <span>📐 120 平方米</span>
+                        <span>👥 4人</span>
                     </div>
                     <div class="room-price">
-                        <span class="price-label">START FROM</span>
+                        <span class="price-label">起价</span>
                         <span class="price-value">฿5,000</span>
-                        <span class="price-unit">/ night</span>
+                        <span class="price-unit">/ 晚</span>
                     </div>
                 </div>
             </div>
@@ -583,34 +559,34 @@
     <section class="facilities" id="facilities">
         <div class="container">
         <div class="section-header">
-            <p class="section-label">Amenities</p>
-            <h2 class="section-title">สิ่งอำนวยความสะดวก</h2>
+            <p class="section-label">设施</p>
+            <h2 class="section-title">酒店设施</h2>
             <div class="section-divider"></div>
         </div>
         
         <div class="facilities-grid">
             <div class="facility-item">
                 <div class="facility-icon">🏊</div>
-                <h3>Infinity Pool</h3>
-                <p>สระว่ายน้ำอินฟินิตี้พร้อมวิวแม่น้ำโขงอันงดงาม</p>
+                <h3>无边泳池</h3>
+                <p>无边泳池可欣赏壮丽的湄公河美景</p>
             </div>
             
             <div class="facility-item">
                 <div class="facility-icon">🍽️</div>
-                <h3>Fine Dining</h3>
-                <p>ห้องอาหารระดับ 5 ดาวเสิร์ฟอาหารไทยและนานาชาติ</p>
+                <h3>高级餐厅</h3>
+                <p>五星级酒店餐厅供应泰式和国际美食</p>
             </div>
             
             <div class="facility-item">
                 <div class="facility-icon">💆</div>
-                <h3>Luxury Spa</h3>
-                <p>สปาและนวดแผนไทยด้วยผลิตภัณฑ์ออร์แกนิค</p>
+                <h3>豪华水疗中心</h3>
+                <p>使用有机产品的水疗和泰式按摩</p>
             </div>
             
             <div class="facility-item">
                 <div class="facility-icon">🚗</div>
-                <h3>Airport Transfer</h3>
-                <p>บริการรถรับส่งสนามบินฟรีด้วยรถหรู</p>
+                <h3>机场接送</h3>
+                <p>免费豪华机场接送服务</p>
             </div>
         </div>
         </div>
@@ -620,56 +596,55 @@
     <section class="contact" id="contact">
         <div class="container">
         <div class="section-header">
-            <p class="section-label">Reservations</p>
-            <h2 class="section-title">จองห้องพัก</h2>
+            <p class="section-label">预订</p>
+            <h2 class="section-title">预订客房</h2>
             <div class="section-divider"></div>
         </div>
         
         <div class="contact-form">
             <form action="https://formsubmit.co/your-email@example.com" method="POST">
                 <div class="form-group">
-                    <label>ชื่อ - นามสกุล</label>
-                    <input type="text" name="name" placeholder="กรุณากรอกชื่อของท่าน" required>
+                    <label>姓名</label>
+                    <input type="text" name="name" placeholder="请输入您的姓名" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>อีเมล</label>
+                    <label>电子邮箱</label>
                     <input type="email" name="email" placeholder="your@email.com" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>เบอร์โทรศัพท์</label>
-                    <input type="tel" name="phone" placeholder="08X-XXX-XXXX" required>
+                    <label>电话号码</label>
+                    <input type="tel" name="phone" placeholder="+66 XXX XXX XXX" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>วันที่เข้าพัก</label>
+                    <label>入住日期</label>
                     <input type="date" name="checkin" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>ประเภทห้อง</label>
+                    <label>房型</label>
                     <select name="room" required>
-                        <option value="">เลือกห้องพัก</option>
-                        <option value="deluxe">Deluxe Mekong View</option>
-                        <option value="premium">Premium Sunset Suite</option>
-                        <option value="presidential">Grand Presidential Suite</option>
+                        <option value="">选择房型</option>
+                        <option value="deluxe">湄公河豪华景观房</option>
+                        <option value="premium">高级日落套房</option>
+                        <option value="presidential">总统大套房</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label>ข้อความเพิ่มเติม</label>
-                    <textarea name="message" rows="4" placeholder="ความต้องการพิเศษ..."></textarea>
+                    <label>特殊要求</label>
+                    <textarea name="message" rows="4" placeholder="任何特殊要求..."></textarea>
                 </div>
                 
-                <input type="hidden" name="_subject" value="คำขอจองห้องพักใหม่ - DView Hotel">
+                <input type="hidden" name="_subject" value="新的预订请求 - DView酒店">
                 
-                <input type="hidden" name="_next" value="https://dview-golden-triangle.web.app/thankyou.html">
+                <input type="hidden" name="_next" value="https://dview-golden-triangle.web.app/zh/thankyou.html">
                 
-                <button type="submit" class="submit-btn">ส่งคำขอจอง</button>
+                <button type="submit" class="submit-btn">发送预订请求</button>
             </form>
         </div>
-        
         </div>
     </section>
 
@@ -678,21 +653,21 @@
     <div id="line-chat" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
         <a href="https://line.me/ti/p/@yourlineid" target="_blank" style="display: flex; align-items: center; gap: 10px; background: #06C755; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
             <span style="font-size: 24px;">💬</span>
-            <span>แชท LINE</span>
+            <span>LINE咨询</span>
         </a>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">DView Golden Triangle Hotel</div>
+            <div class="footer-logo">DView金三角酒店</div>
             <div class="footer-info">
-                <div class="footer-item">📍 ตำบลเวียง อำเภอเชียงแสน จังหวัดเชียงราย 57150</div>
-                <div class="footer-item">📞 053-XXX-XXXX</div>
+                <div class="footer-item">📍 泰国清莱府清盛县威昂区 57150</div>
+                <div class="footer-item">📞 +66 53-XXX-XXXX</div>
                 <div class="footer-item">✉️ reservations@dviewhotel.com</div>
             </div>
             <div class="footer-divider"></div>
-            <p class="copyright">© 2026 DView Golden Triangle Hotel. All Rights Reserved.</p>
+            <p class="copyright">© 2026 DView金三角酒店。保留所有权利。</p>
         </div>
     </footer>
 </body>
