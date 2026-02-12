@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage Thai"
+        name: "home-th"
+        file: "public/index.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          
+      - label: "Homepage English"
+        name: "home-en"
+        file: "public/en/index.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+
+  - name: "rooms"
+    label: "Rooms"
+    folder: "content/rooms"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Room Name (Thai)", name: "title_th", widget: "string"}
+      - {label: "Room Name (English)", name: "title_en", widget: "string"}
+      - {label: "Description (Thai)", name: "description_th", widget: "text"}
+      - {label: "Description (English)", name: "description_en", widget: "text"}
+      - {label: "Price per Night", name: "price", widget: "number", value_type: "int"}
+      - {label: "Room Image", name: "image", widget: "image"}
+      - {label: "Bed Type", name: "bed", widget: "select", options: ["1 King Bed", "2 King Beds", "1 Queen Bed"]}
+      - {label: "Room Size (sqm)", name: "size", widget: "number", value_type: "int"}
+      - {label: "Max Guests", name: "guests", widget: "number", value_type: "int"}
+      - {label: "Badge", name: "badge", widget: "select", options: ["POPULAR", "BEST VIEW", "LUXURY", ""]}
+      - {label: "Order", name: "order", widget: "number", value_type: "int"}
+
+  - name: "facilities"
+    label: "Facilities"
+    folder: "content/facilities"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name (Thai)", name: "title_th", widget: "string"}
+      - {label: "Name (English)", name: "title_en", widget: "string"}
+      - {label: "Description (Thai)", name: "description_th", widget: "text"}
+      - {label: "Description (English)", name: "description_en", widget: "text"}
+      - {label: "Icon Emoji", name: "icon", widget: "string", default: "🏨"}
+      - {label: "Order", name: "order", widget: "number", value_type: "int"}
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Hotel Info"
+        name: "hotel-info"
+        file: "content/settings/hotel.json"
+        fields:
+          - {label: "Hotel Name", name: "name", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address (Thai)", name: "address_th", widget: "text"}
+          - {label: "Address (English)", name: "address_en", widget: "text"}
+          - {label: "LINE ID", name: "line_id", widget: "string"}
+          - {label: "Theme Color", name: "theme_color", widget: "color"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}

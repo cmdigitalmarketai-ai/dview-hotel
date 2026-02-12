@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DView Golden Triangle Hotel | Luxury Resort Chiang Rai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4A6;
+            --navy: #0A1628;
+            --navy-light: #1A2A42;
+            --cream: #FAF8F3;
+        }
+        
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: var(--cream);
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        /* Language Switcher - Elegant */
+        .lang-switcher {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            padding: 12px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212,175,55,0.3);
+        }
+        
+        .lang-switcher a {
+            text-decoration: none;
+            color: var(--navy);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            background: var(--gold);
+            color: white;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+        }
+        
+        /* Hero Section - Luxury */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10,22,40,0.8) 0%, rgba(10,22,40,0.4) 100%),
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--cream), transparent);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 40px;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            letter-spacing: 8px;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(212,175,55,0.4);
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212,175,55,0.6);
+            background: var(--gold-light);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+            width: 100%;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 30px auto;
+        }
+        
+        /* Rooms - Luxury Cards */
+        .rooms {
+            background: white;
+        }
+        
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            padding: 0 30px;
+        }
+        
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212,175,55,0.1);
+        }
+        
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+        }
+        
+        .room-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .room-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+        
+        .room-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            z-index: 1;
+        }
+        
+        .room-info {
+            padding: 40px;
+        }
+        
+        .room-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        
+        .room-info p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .room-features {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .room-price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .price-label {
+            font-size: 14px;
+            color: #888;
+            letter-spacing: 1px;
+        }
+        
+        .price-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
+        .price-unit {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        /* Facilities - Elegant */
+        .facilities {
+            background: linear-gradient(to bottom, var(--cream), white);
+        }
+        
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 30px;
+        }
+        
+        .facility-item {
+            text-align: center;
+            padding: 50px 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212,175,55,0.1);
+        }
+        
+        .facility-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+            border-color: rgba(212,175,55,0.3);
+        }
+        
+        .facility-icon {
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            border-radius: 50%;
+        }
+        
+        .facility-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+        
+        .facility-item p {
+            color: #777;
+            font-weight: 300;
+            font-size: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact .section-title {
+            color: white;
+        }
+        
+        .contact .section-label {
+            color: var(--gold);
+        }
+        
+        .contact-form {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 60px;
+            border-radius: 20px;
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 18px 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 16px;
+            font-family: 'Prompt', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+        }
+        
+        /* Footer - Luxury */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 60px 40px 30px;
+            border-top: 1px solid rgba(212,175,55,0.2);
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+        
+        .footer-divider {
+            width: 100px;
+            height: 1px;
+            background: var(--gold);
+            margin: 30px auto;
+            opacity: 0.5;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 42px; }
+            .section-title { font-size: 32px; }
+            .rooms-grid { grid-template-columns: 1fr; }
+            .lang-switcher { top: 15px; right: 15px; padding: 8px 15px; }
+            .contact-form { padding: 40px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="/" class="active">ไทย</a>
+        <a href="/en/">EN</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Luxury Resort & Spa</p>
+            <h1>DView Golden<br>Triangle Hotel</h1>
+            <p class="hero-tagline">Experience Unparalleled Elegance in the Heart of Chiang Rai</p>
+            <a href="#contact" class="cta-button">Reserve Your Stay</a>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms" id="rooms">
+        <div class="container">
+        <div class="section-header">
+            <p class="section-label">Accommodations</p>
+            <h2 class="section-title">ห้องพักหรูหรา</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-image">
+                    <span class="room-badge">POPULAR</span>
+                    🌊
+                </div>
+                <div class="room-info">
+                    <h3>Deluxe Mekong View</h3>
+                    <p>ห้องพักสุดหรูที่มองเห็นวิวแม่น้ำโขงอันงดงาม พร้อมระเบียงส่วนตัวและอ่างอาบน้ำแช่ตัว</p>
+                    <div class="room-features">
+                        <span>🛏️ 1 King Bed</span>
+                        <span>📐 45 m²</span>
+                        <span>👥 2 Guests</span>
+                    </div>
+                    <div class="room-price">
+                        <span class="price-label">START FROM</span>
+                        <span class="price-value">฿2,500</span>
+                        <span class="price-unit">/ night</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="room-card">
+                <div class="room-image">
+                    <span class="room-badge">BEST VIEW</span>
+                    🌅
+                </div>
+                <div class="room-info">
+                    <h3>Premium Sunset Suite</h3>
+                    <p>ชมพระอาทิตย์ตกดินอันตระการตาจากระเบียงส่วนตัว ห้องกว้างขวางเหมาะสำหรับคู่รัก</p>
+                    <div class="room-features">
+                        <span>🛏️ 1 King Bed</span>
+                        <span>📐 60 m²</span>
+                        <span>👥 2 Guests</span>
+                    </div>
+                    <div class="room-price">
+                        <span class="price-label">START FROM</span>
+                        <span class="price-value">฿3,200</span>
+                        <span class="price-unit">/ night</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="room-card">
+                <div class="room-image">
+                    <span class="room-badge">LUXURY</span>
+                    👑
+                </div>
+                <div class="room-info">
+                    <h3>Grand Presidential Suite</h3>
+                    <p>ห้องพักระดับพรีเมียมสุดหรู พร้อมห้องนั่งเล่นส่วนตัว บริการรูมเซอร์วิส 24 ชั่วโมง</p>
+                    <div class="room-features">
+                        <span>🛏️ 2 King Beds</span>
+                        <span>📐 120 m²</span>
+                        <span>👥 4 Guests</span>
+                    </div>
+                    <div class="room-price">
+                        <span class="price-label">START FROM</span>
+                        <span class="price-value">฿5,000</span>
+                        <span class="price-unit">/ night</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities" id="facilities">
+        <div class="container">
+        <div class="section-header">
+            <p class="section-label">Amenities</p>
+            <h2 class="section-title">สิ่งอำนวยความสะดวก</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="facilities-grid">
+            <div class="facility-item">
+                <div class="facility-icon">🏊</div>
+                <h3>Infinity Pool</h3>
+                <p>สระว่ายน้ำอินฟินิตี้พร้อมวิวแม่น้ำโขงอันงดงาม</p>
+            </div>
+            
+            <div class="facility-item">
+                <div class="facility-icon">🍽️</div>
+                <h3>Fine Dining</h3>
+                <p>ห้องอาหารระดับ 5 ดาวเสิร์ฟอาหารไทยและนานาชาติ</p>
+            </div>
+            
+            <div class="facility-item">
+                <div class="facility-icon">💆</div>
+                <h3>Luxury Spa</h3>
+                <p>สปาและนวดแผนไทยด้วยผลิตภัณฑ์ออร์แกนิค</p>
+            </div>
+            
+            <div class="facility-item">
+                <div class="facility-icon">🚗</div>
+                <h3>Airport Transfer</h3>
+                <p>บริการรถรับส่งสนามบินฟรีด้วยรถหรู</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+        <div class="section-header">
+            <p class="section-label">Reservations</p>
+            <h2 class="section-title">จองห้องพัก</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="contact-form">
+            <form action="https://formsubmit.co/your-email@example.com" method="POST">
+                <div class="form-group">
+                    <label>ชื่อ - นามสกุล</label>
+                    <input type="text" name="name" placeholder="กรุณากรอกชื่อของท่าน" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>อีเมล</label>
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>เบอร์โทรศัพท์</label>
+                    <input type="tel" name="phone" placeholder="08X-XXX-XXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>วันที่เข้าพัก</label>
+                    <input type="date" name="checkin" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>ประเภทห้อง</label>
+                    <select name="room" required>
+                        <option value="">เลือกห้องพัก</option>
+                        <option value="deluxe">Deluxe Mekong View</option>
+                        <option value="premium">Premium Sunset Suite</option>
+                        <option value="presidential">Grand Presidential Suite</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>ข้อความเพิ่มเติม</label>
+                    <textarea name="message" rows="4" placeholder="ความต้องการพิเศษ..."></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" value="คำขอจองห้องพักใหม่ - DView Hotel">
+                
+                <input type="hidden" name="_next" value="https://dview-golden-triangle.web.app/thankyou.html">
+                
+                <button type="submit" class="submit-btn">ส่งคำขอจอง</button>
+            </form>
+        </div>
+        
+        </div>
+    </section>
+
+    <!-- LINE Chat Widget -->
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <div id="line-chat" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;">
+        <a href="https://line.me/ti/p/@yourlineid" target="_blank" style="display: flex; align-items: center; gap: 10px; background: #06C755; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            <span style="font-size: 24px;">💬</span>
+            <span>แชท LINE</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">DView Golden Triangle Hotel</div>
+            <div class="footer-info">
+                <div class="footer-item">📍 ตำบลเวียง อำเภอเชียงแสน จังหวัดเชียงราย 57150</div>
+                <div class="footer-item">📞 053-XXX-XXXX</div>
+                <div class="footer-item">✉️ reservations@dviewhotel.com</div>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="copyright">© 2026 DView Golden Triangle Hotel. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
